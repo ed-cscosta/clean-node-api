@@ -18,3 +18,31 @@ Resources:
 
 - [Typescript](https://www.typescriptlang.org/)
 - [@types/node](https://www.npmjs.com/package/@types/node)
+
+### ESlint with standard config
+
+O ESlint juntamente com a config standard vai fazer com que obrigatóriamente o nosso código siga algumas regras estruturais e de escrita deixando sempre tudo coerente.
+
+PS: Para usar a standart-config em projetos typescript é necessário instalar packages extras
+
+    npm install --save-dev \
+
+    typescript@\* \
+
+    eslint@^7.12.1 \
+
+    eslint-plugin-promise@^5.0.0 \
+
+    eslint-plugin-import@^2.22.1 \
+
+    eslint-plugin-node@^11.1.0 \
+
+    @typescript-eslint/eslint-plugin@^4.0.1 \
+
+    eslint-config-standard-with-typescript@latest
+
+Resources:
+
+- [ESlint](https://eslint.org/)
+- [StandardJS](https://standardjs.com/)
+- [StandardJS for Typescript](https://github.com/standard/eslint-config-standard-with-typescript)
