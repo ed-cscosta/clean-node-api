@@ -46,3 +46,15 @@ Resources:
 - [ESlint](https://eslint.org/)
 - [StandardJS](https://standardjs.com/)
 - [StandardJS for Typescript](https://github.com/standard/eslint-config-standard-with-typescript)
+
+### Husky & lint-staged
+
+Husky: Vai permitir executar processos (lint, rodar testes, etc...) antes de executar os commits.
+lint-staged: Apenas vai rodar executar o eslint em ficheiro que sofreram alterações.
+
+PS: Verificar a instalação nas Docs.
+
+Resources:
+
+- [Husky](https://typicode.github.io/husky/#/)
+- [lint-staged](https://github.com/okonet/lint-staged)
