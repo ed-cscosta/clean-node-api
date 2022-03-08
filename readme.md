@@ -58,3 +58,11 @@ Resources:
 
 - [Husky](https://typicode.github.io/husky/#/)
 - [lint-staged](https://github.com/okonet/lint-staged)
+
+### Jest
+
+Create tests to validate the code
+
+Resources:
+
+- [Jest](https://jestjs.io/)
