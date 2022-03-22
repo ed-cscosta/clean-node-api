@@ -25,6 +25,6 @@ export class DbCreateAccount implements CreateAccount {
       Object.assign({}, accountData, { password: hashedPassword })
     );
 
-    return await new Promise((resolve) => resolve(account));
+    return account;
   }
 }
