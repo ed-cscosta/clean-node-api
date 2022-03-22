@@ -2,26 +2,29 @@ import {
   AccountModel,
   CreateAccount,
   CreateAccountModel,
+  CreateAccountRepository,
   Encrypter,
 } from './db-create-account-protocols';
 
 export class DbCreateAccount implements CreateAccount {
   private readonly encrypter: Encrypter;
+  private readonly createAccountRepository: CreateAccountRepository;
 
-  constructor(encrypter: Encrypter) {
+  constructor(
+    encrypter: Encrypter,
+    createAccountRepository: CreateAccountRepository
+  ) {
     this.encrypter = encrypter;
+    this.createAccountRepository = createAccountRepository;
   }
 
-  async create(account: CreateAccountModel): Promise<AccountModel> {
-    await this.encrypter.encrypt(account.password);
+  async create(accountData: CreateAccountModel): Promise<AccountModel> {
+    const hashedPassword = await this.encrypter.encrypt(accountData.password);
 
-    const teste: AccountModel = {
-      id: 'valid_id',
-      name: 'valid_name',
-      email: 'valid_email',
-      password: 'hashed_password',
-    };
+    const account = await this.createAccountRepository.create(
+      Object.assign({}, accountData, { password: hashedPassword })
+    );
 
-    return await new Promise((resolve) => resolve(teste));
+    return await new Promise((resolve) => resolve(account));
   }
 }
